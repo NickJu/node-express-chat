@@ -1,8 +1,15 @@
 const mongoose = require('mongoose');
 
-const testSchema = mongoose.Schema({
-  text: { type: String, required: true },
-  number: { type: Number, required: true },
+const userSchema = mongoose.Schema({
+  name: { type: String, required: true },
 });
 
-module.exports = mongoose.model('Test', clickSchema);
+module.exports = mongoose.model('user', userSchema);
+
+const textSchema = mongoose.Schema({
+  userId: { type: Number, required: true },
+  text: { type: String, required: true },
+  time:{type: String, require: true}
+});
+
+module.exports = mongoose.model('msg', textSchema);
